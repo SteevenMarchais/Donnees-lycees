@@ -8,6 +8,7 @@ import bs4
 import urllib
 import wget
 import shutil
+import PyPDF2
    
 
 
@@ -29,9 +30,17 @@ def get_pdfs_Poitier():
 
    
     
-    file1 = wget.download(links[0])
+    file1 = wget.download(links[1])
     shutil.move("./" + file1, "../data/" + file1)
+    pdf1 = open("../data/" + file1, "rb")
+    pdfReader = PyPDF2.PdfFileReader(pdf1) 
+    print(pdfReader.numPages)
+    pageObj = pdfReader.getPage(1)  
+    test = pageObj.extractText()
+    print(test)
+    pdf1.close()  
 
+    
 
     
 def get_pdfs_Bordeaux():
@@ -70,5 +79,7 @@ def get_pdfs_Limoges():
     
     file2 = wget.download(links[0])
     shutil.move("./" + file2, "../data/" + file2)
-   
+
+
+    
 
