@@ -1,0 +1,8 @@
+Version de python utilisé: 3.8
+Modules nécessaire: 
+urllib(ouverture de la page html)
+bs4(recherche dans la page html)
+wget(téléchargement du pdf)
+shutil(déplacement des documents vers les bons fichiers)
+PyPDF2(lecture et extraction des données du pdf)
+
